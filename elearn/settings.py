@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'redisboard',
     'rest_framework',
+    'chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -87,6 +89,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'elearn.wsgi.application'
+ASGI_APPLICATION = 'elearn.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -114,6 +117,15 @@ CACHES = {
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 60 * 15
 CACHE_MIDDLEWARE_KEY_PREFIX = 'elearn'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
