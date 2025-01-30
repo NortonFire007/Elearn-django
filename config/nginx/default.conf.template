@@ -17,7 +17,7 @@ server {
     listen 443 ssl;
     ssl_certificate /code/elearn/ssl/elearn.crt;
     ssl_certificate_key /code/elearn/ssl/elearn.key;
-    server_name www.elearnproject25.com elearnproject25.com;
+    server_name *.elearnproject25.com elearnproject25.com;
     error_log stderr warn;
     access_log /dev/stdout main;
 

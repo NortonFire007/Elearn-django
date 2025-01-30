@@ -6,7 +6,7 @@ ADMINS = [
     (os.getenv('ADMIN_NAME'), os.getenv('ADMIN_EMAIL')),
 ]
 
-ALLOWED_HOSTS = ['elearnproject25.com', 'www.elearnproject25.com']
+ALLOWED_HOSTS = ['.elearnproject25.com']
 
 DATABASES = {
     'default': {
