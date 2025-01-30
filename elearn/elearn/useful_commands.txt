@@ -1,3 +1,8 @@
 1) docker run -it --rm --name memcached -p 11211:11211 memcached -m 64
 2) docker run -it --rm --name redis -p 6379:6379 redis
 3) python manage.py runserver --settings=elearn.settings.local
+
+openssl req -x509 -newkey rsa:2048 -sha256 -days 3650 -nodes \
+ -keyout ssl/elearn.key -out ssl/elearn.crt \
+ -subj '/CN=*.elearnproject25.com' \
+ -addext 'subjectAltName=DNS:*.elearnproject25.com'
